@@ -27,7 +27,8 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="/" aria-current="page" class="rounded-md bg-gray-900 px-3 py-2 font-medium text-white">Home</a>
+              <a href="/" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">Home</a>
+              <a href="/jobs" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">Jobs</a>
             </div>
           </div>
         </div>
