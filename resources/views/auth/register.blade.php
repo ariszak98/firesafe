@@ -11,7 +11,7 @@
 
         <div>
             <x-forms.label for="first_name">First Name</x-forms.label>
-            <div class="mt-2">
+            <div class="mt-2"> 
             <x-forms.input placeholder="John" id="first_name" type="first_name" name="first_name" required autocomplete="first_name" />
           </div>
         </div>
