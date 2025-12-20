@@ -17,6 +17,20 @@
         </div>
 
         <div>
+            <x-forms.label for="period">Period</x-forms.label>
+            <div class="mt-2"> 
+            <x-forms.input placeholder="JULY" id="period" name="period" required autocomplete="period" />
+          </div>
+        </div>
+
+        <div>
+            <x-forms.label for="company_id">Company</x-forms.label>
+            <div class="mt-2"> 
+            <x-forms.input placeholder="Petrolko" id="company_id" name="company_id" required autocomplete="company_id" />
+          </div>
+        </div>
+
+        <div>
             <x-forms.label for="contact_information">Contact Information</x-forms.label>
             <div class="mt-2"> 
             <x-forms.input placeholder="Giorgos Papadopoulos, 6975920407" id="contact_information" name="contact_information" required autocomplete="contact_information" />

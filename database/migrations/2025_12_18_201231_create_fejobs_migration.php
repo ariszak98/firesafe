@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fejobs_migration', function (Blueprint $table) {
+        Schema::create('fejobs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id')
+                ->constrained('companies')   // references id on companies by default
+                ->cascadeOnDelete();         // optional, keeps child rows in sync
+            $table->string('period');
             $table->string('location');
             $table->string('contact_information')->nullable();
             $table->string('fe6')->nullable();
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fejobs_migration');
+        Schema::dropIfExists('fejobs');
     }
 };

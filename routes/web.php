@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\JobsController;
-use App\Http\Controllers\RegisteredUserController;
-use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\RegisteredUserController;
 
 Route::get('/', function () {
     return view('main');
@@ -21,4 +22,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/jobs', [JobsController::class, 'index']);
     Route::get('/jobs/create', [JobsController::class, 'create']);
     Route::post('/jobs', [JobsController::class, 'store']);
+    Route::get('/companies', [CompaniesController::class, 'index']);
+    Route::get('/companies/create', [CompaniesController::class, 'create']);
+    Route::post('/companies', [CompaniesController::class, 'store']);
 });
