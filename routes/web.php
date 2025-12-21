@@ -6,11 +6,6 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\RegisteredUserController;
 
-/*
-Route::get('/', function () {
-    return view('main');
-});
-*/
 
 
 Route::middleware('guest')->group(function() {
@@ -21,12 +16,19 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::middleware('auth')->group(function() {
-    Route::get('/', [JobsController::class, 'indexMonth']);
+
+    /** SESSION ROUTES  */
     Route::delete('/logout', [SessionController::class, 'destroy']);
+
+    /** JOB ROUTES */
+    Route::get('/', [JobsController::class, 'indexMonth']);
     Route::get('/jobs', [JobsController::class, 'index']);
     Route::get('/jobs/create', [JobsController::class, 'create']);
     Route::post('/jobs', [JobsController::class, 'store']);
+
+    /** COMPANY ROUTES */
     Route::get('/companies', [CompaniesController::class, 'index']);
     Route::get('/companies/create', [CompaniesController::class, 'create']);
     Route::post('/companies', [CompaniesController::class, 'store']);
+    
 });
