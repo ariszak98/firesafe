@@ -1,4 +1,4 @@
-<x-layout :user="request()->user()" title="Companies - Firesafe" heading="Companies">
+<x-layout :user="request()->user()" title="Εταιρείες - Firesafe" heading="Εταιρείες">
 
 <!-- <hr class="mb-5 border-t border-gray-300"> -->
 
@@ -14,13 +14,13 @@
           ID
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-            Jobs
+            ΕΡΓΑΣΙΕΣ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-          Company Name
+          ΟΝΟΜΑ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-          Comments
+          ΣΧΟΛΙΑ
         </th>
       </tr>
     </thead>
@@ -29,7 +29,13 @@
     <tbody class="divide-y divide-gray-200">
 
         @foreach ($companies as $company)
-            <tr class="hover:bg-gray-50">
+            <tr
+                class="hover:bg-gray-100 transition cursor-pointer"
+                role="link"
+                tabindex="0"
+                onclick="window.location='{{ url('/companies/'. $company->id . '') }}'"
+                onkeydown="if(event.key==='Enter'){ window.location='{{ url('/') }}' }"
+            >
                     <td class="px-4 py-3 text-sm text-gray-800">
                     {{ $company->id }}
                     </td>
@@ -54,6 +60,6 @@
 
 <hr class="mb-5 border-t border-gray-300">
 
-<a href="/companies/create" class="hover:bg-gray-900 rounded-md bg-gray-800 px-3 py-2 font-medium text-white">Create Company</a>
+<a href="/companies/create" class="hover:bg-gray-900 rounded-md bg-gray-800 px-3 py-2 font-medium text-white">Νέα Εταιρεία</a>
 
 </x-layout>

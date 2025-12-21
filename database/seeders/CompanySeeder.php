@@ -20,7 +20,8 @@ class CompanySeeder extends Seeder
             ['name'     => 'OIKOSERVICE'],
             ['name'     => 'INOIL'],
             ['name'     => 'POLYGON'],
-            ['name'     => 'ΠΕΤΡΟΣ ΔΙΑΧΕΙΡΙΣΤΙΚΗ']
+            ['name'     => 'ΠΕΤΡΟΣ ΔΙΑΧΕΙΡΙΣΤΙΚΗ'],
+            ['name'     => 'FIRESAFE']
         ];
 
         foreach ($companies as $comp) {

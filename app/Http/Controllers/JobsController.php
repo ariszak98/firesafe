@@ -8,12 +8,42 @@ use Illuminate\Http\Request;
 
 class JobsController extends Controller
 {
+
+    public function indexMonth() {
+
+        $month = now()->month;
+        
+        $fejobs = Job::where('period', $month)->get();
+        $months = [
+            1 => 'ΙΑΝΟΥΑΡΙΟΣ',
+            2 => 'ΦΕΒΡΟΥΑΡΙΟΣ',
+            3 => 'ΜΑΡΤΙΟΣ',
+            4 => 'ΑΠΡΙΛΙΟΣ',
+            5 => 'ΜΑΙΟΣ',
+            6 => 'ΙΟΥΝΙΟΣ',
+            7 => 'ΙΟΥΛΙΟΣ',
+            8 => 'ΑΥΓΟΥΣΤΟΣ',
+            9 => 'ΣΕΠΤΕΒΡΙΟΣ',
+            10 => 'ΟΚΤΩΒΡΙΟΣ',
+            11 => 'ΝΟΕΜΒΡΙΟΣ',
+            12 => 'ΔΕΚΕΜΒΡΙΟΣ'
+        ];
+
+        foreach ($fejobs as $fejob) {
+            $fejob->period = $months[$fejob->period];
+        }
+        
+        return view('jobs.current_month', ['fejobs' => $fejobs]);
+    }
+
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $fejobs = Job::all();
+        $fejobs = Job::orderBy('period')->get();
         $months = [
             1 => 'ΙΑΝΟΥΑΡΙΟΣ',
             2 => 'ΦΕΒΡΟΥΑΡΙΟΣ',

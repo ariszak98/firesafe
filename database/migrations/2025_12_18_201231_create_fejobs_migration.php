@@ -16,11 +16,11 @@ return new class extends Migration
             $table->foreignId('company_id')
                 ->constrained('companies')   // references id on companies by default
                 ->cascadeOnDelete();         // optional, keeps child rows in sync
-            $table->string('period');
+            $table->integer('period');
             $table->string('location');
             $table->string('contact_information')->nullable();
-            $table->string('fe6')->nullable();
-            $table->string('fe12')->nullable();
+            $table->integer('fe6')->nullable();
+            $table->integer('fe12')->nullable();
             $table->string('comments')->nullable();
             $table->timestamps();
         });

@@ -27,9 +27,9 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="/" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">ΑΡΧΙΚΗ</a>
-              <a href="/jobs" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">ΕΡΓΑΣΙΕΣ</a>
-              <a href="/companies" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">ΕΤΑΙΡΕΙΕΣ</a>
+              <a href="/" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-bold text-white">ΑΡΧΙΚΗ</a>
+              <a href="/jobs" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-bold text-white">ΕΡΓΑΣΙΕΣ</a>
+              <a href="/companies" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-bold text-white">ΕΤΑΙΡΕΙΕΣ</a>
             </div>
           </div>
         </div>
@@ -38,8 +38,8 @@
 
             @guest
                 <div class="space-x-6 font-bold text-white">
-                <a class="hover:bg-gray-900 px-3 py-2 text-white" href="/register">ΕΓΓΡΑΦΗ</a>
-                <a class="hover:bg-gray-900 px-3 py-2 text-white" href="/login">ΣΥΝΔΕΣΗ</a>
+                <a class="hover:bg-gray-900 px-3 py-2 text-white font-bold" href="/register">ΕΓΓΡΑΦΗ</a>
+                <a class="hover:bg-gray-900 px-3 py-2 text-white font-bold" href="/login">ΣΥΝΔΕΣΗ</a>
             </div>
             @endguest
             @auth

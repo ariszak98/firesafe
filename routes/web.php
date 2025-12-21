@@ -6,9 +6,12 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\RegisteredUserController;
 
+/*
 Route::get('/', function () {
     return view('main');
 });
+*/
+
 
 Route::middleware('guest')->group(function() {
     Route::get('/login', [SessionController::class, 'create'])->name('login');
@@ -18,6 +21,7 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::middleware('auth')->group(function() {
+    Route::get('/', [JobsController::class, 'indexMonth']);
     Route::delete('/logout', [SessionController::class, 'destroy']);
     Route::get('/jobs', [JobsController::class, 'index']);
     Route::get('/jobs/create', [JobsController::class, 'create']);
