@@ -27,9 +27,9 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="/" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">Home</a>
-              <a href="/jobs" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">Jobs</a>
-              <a href="/companies" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">Companies</a>
+              <a href="/" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">ΑΡΧΙΚΗ</a>
+              <a href="/jobs" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">ΕΡΓΑΣΙΕΣ</a>
+              <a href="/companies" aria-current="page" class="hover:rounded-md hover:bg-gray-900 px-3 py-2 font-medium text-white">ΕΤΑΙΡΕΙΕΣ</a>
             </div>
           </div>
         </div>
@@ -38,8 +38,8 @@
 
             @guest
                 <div class="space-x-6 font-bold text-white">
-                <a class="hover:bg-gray-900 px-3 py-2 text-white" href="/register">Register</a>
-                <a class="hover:bg-gray-900 px-3 py-2 text-white" href="/login">Log In</a>
+                <a class="hover:bg-gray-900 px-3 py-2 text-white" href="/register">ΕΓΓΡΑΦΗ</a>
+                <a class="hover:bg-gray-900 px-3 py-2 text-white" href="/login">ΣΥΝΔΕΣΗ</a>
             </div>
             @endguest
             @auth
@@ -65,9 +65,9 @@
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full outline -outline-offset-1 outline-white/10" />
               </button>
               <el-menu slot="menu" anchor="bottom end" popover class="w-48 origin-top-right rounded-md bg-white py-1 shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Settings</a>
-                  <form action="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden" method="POST">@csrf @method('delete')<button>Log out</button></form> <!--<a href="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Log out</a> -->
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">ΠΡΟΦΙΛ</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">ΡΥΘΜΙΣΕΙΣ</a>
+                  <form action="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden" method="POST">@csrf @method('delete')<button>ΑΠΟΣΥΝΔΕΣΗ</button></form> <!--<a href="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Log out</a> -->
               </el-menu>
             </el-dropdown>
             @endauth
@@ -100,7 +100,7 @@
     <el-disclosure id="mobile-menu" hidden class="block md:hidden">
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-        <a href="/" aria-current="page" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</a>
+        <a href="/" aria-current="page" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">ΑΡΧΙΚΗ</a>
       </div>
       <div class="border-t border-white/10 pt-4 pb-3">
 
@@ -129,13 +129,13 @@
         @endauth
         <div class="mt-3 space-y-1 px-2">
             @guest
-                <a href="/register" class="hover:bg-gray-700 text-white block px-4 py-2 focus:bg-gray-100 focus:outline-hidden">Register</a>
-                <a href="/login" class="hover:bg-gray-700 text-white block px-4 py-2 focus:bg-gray-100 focus:outline-hidden">Log in</a>
+                <a href="/register" class="hover:bg-gray-700 text-white block px-4 py-2 focus:bg-gray-100 focus:outline-hidden">ΕΓΓΡΑΦΗ</a>
+                <a href="/login" class="hover:bg-gray-700 text-white block px-4 py-2 focus:bg-gray-100 focus:outline-hidden">ΣΥΝΔΕΣΗ</a>
             @endguest
             @auth
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Profile</a>
-                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings</a>
-                <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">Log out</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">ΠΡΟΦΙΛ</a>
+                <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">ΡΥΘΜΙΣΕΙΣ</a>
+                <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden">ΑΠΟΣΥΝΔΕΣΗ</a>
             @endauth
             
         </div>

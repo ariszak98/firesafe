@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,24 @@ class JobsController extends Controller
     public function index()
     {
         $fejobs = Job::all();
+        $months = [
+            1 => 'ΙΑΝΟΥΑΡΙΟΣ',
+            2 => 'ΦΕΒΡΟΥΑΡΙΟΣ',
+            3 => 'ΜΑΡΤΙΟΣ',
+            4 => 'ΑΠΡΙΛΙΟΣ',
+            5 => 'ΜΑΙΟΣ',
+            6 => 'ΙΟΥΝΙΟΣ',
+            7 => 'ΙΟΥΛΙΟΣ',
+            8 => 'ΑΥΓΟΥΣΤΟΣ',
+            9 => 'ΣΕΠΤΕΒΡΙΟΣ',
+            10 => 'ΟΚΤΩΒΡΙΟΣ',
+            11 => 'ΝΟΕΜΒΡΙΟΣ',
+            12 => 'ΔΕΚΕΜΒΡΙΟΣ'
+        ];
+
+        foreach ($fejobs as $fejob) {
+            $fejob->period = $months[$fejob->period];
+        }
         
         return view('jobs.index', ['fejobs' => $fejobs]);
     }
@@ -22,7 +41,8 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('jobs.create');
+        $companies = Company::all() ?? false;
+        return view('jobs.create',['companies' => $companies]);
     }
 
     /**

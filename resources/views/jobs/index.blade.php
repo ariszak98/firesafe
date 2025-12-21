@@ -1,4 +1,4 @@
-<x-layout :user="request()->user()" title="Jobs - Firesafe" heading="Jobs">
+<x-layout :user="request()->user()" title="Jobs - Firesafe" heading="Εργασίες">
 
 
     <div class="overflow-x-auto mb-5 mt-5">
@@ -11,22 +11,22 @@
           ID
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-          Location
+          ΤΟΠΟΘΕΣΙΑ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-            Company Name
+            ΕΤΑΙΡΕΙΑ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-            Period
+            ΜΗΝΑΣ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-          FE [6kg // 12kg]
+          ΠΥΡΟΣΒΕΣΤΗΡΕΣ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-          Contact Information
+          ΕΠΙΚΟΙΝΩΝΙΑ
         </th>
         <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">
-          Comments
+          ΣΧΟΛΙΑ
         </th>
       </tr>
     </thead>
@@ -72,6 +72,6 @@
 
     <hr class="mb-5 border-t border-gray-300">
 
-<a href="/jobs/create" class="hover:bg-gray-900 rounded-md bg-gray-800 px-3 py-2 font-medium text-white">Create Job</a>
+<a href="/jobs/create" class="hover:bg-gray-900 rounded-md bg-gray-800 px-3 py-2 font-medium text-white">Νέα Εργασία</a>
 
 </x-layout>
