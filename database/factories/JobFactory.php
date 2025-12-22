@@ -21,6 +21,7 @@ class JobFactory extends Factory
 
         return [
             // Attach to an existing company; CompanySeeder seeds the fixed names.
+            'done'              => 0,
             'company_id'        =>  $companyId,
             'period'            =>  fake()->randomElement([1,2,3,4,5,6,7,8,9,10,11,12]),
             'location'          =>  fake()->streetAddress(),

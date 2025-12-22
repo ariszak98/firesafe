@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('fejobs', function (Blueprint $table) {
             $table->id();
+            $table->boolean('done');
             $table->foreignId('company_id')
                 ->constrained('companies')   // references id on companies by default
                 ->cascadeOnDelete();         // optional, keeps child rows in sync

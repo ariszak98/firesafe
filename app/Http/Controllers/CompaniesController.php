@@ -52,7 +52,9 @@ class CompaniesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $company = Company::findOrFail($id);
+        
+        return view('companies.edit', ['company' => $company]);
     }
 
     /**
@@ -60,7 +62,18 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name'      => ['required'],
+            'comments'  => ['']
+        ]);
+
+        $company = Company::findOrFail($id);
+
+        $company->name = $request->name;
+        $company->comments = $request->comments;
+        $company->update();
+
+        return redirect('/companies');
     }
 
     /**

@@ -108,7 +108,10 @@ class JobsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $companies = Company::all() ?? false;
+        $job = Job::findOrFail($id);
+
+        return view('jobs.edit', ['companies' => $companies, 'job' => $job]);
     }
 
     /**
@@ -116,7 +119,21 @@ class JobsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $attributes = $request->validate([
+            'location'      => ['required'],
+            'period'        => ['required'],
+            'company_id'    => ['required'],
+            'contact_information'   => ['required'],
+            'fe6'           => [''],
+            'fe12'          => [''],
+            'comments'      => ['']
+        ]);
+
+        $job = Job::findOrFail($id);
+        $job->update($attributes);
+
+        return redirect('/jobs');
     }
 
     /**
@@ -126,4 +143,21 @@ class JobsController extends Controller
     {
         //
     }
+
+    public function makeDone(string $id){
+        $job = Job::findOrFail($id);
+        $job->done = 1;
+        $job->update();
+
+        return redirect('/jobs/'.$job->id);
+    }
+
+    public function makeUndone(string $id){
+        $job = Job::findOrFail($id);
+        $job->done = 0;
+        $job->update();
+
+        return redirect('/jobs/'.$job->id);
+    }
+
 }

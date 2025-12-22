@@ -40,7 +40,12 @@
     <tbody class="divide-y divide-gray-200">
         @foreach ($fejobs as $job)
             <tr
-                class="hover:bg-gray-100 transition cursor-pointer"
+                @if ($job->done)
+                    class="bg-green-300 hover:bg-green-400 transition cursor-pointer"
+                @else
+                    class="hover:bg-gray-100 transition cursor-pointer"
+                @endif
+                
                 role="link"
                 tabindex="0"
                 onclick="window.location='{{ url('/jobs/'. $job->id . '') }}'"
